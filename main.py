@@ -47,19 +47,19 @@ def main(page: ft.Page):
             m = F(r)
             v3.value = m.decrypt(b).decode()
         except:
-            v3.value = "Status: 500"
+            v3.value = "DON'T TRY TO BE OVER-SMART"
         page.update()
 
     page.add(
         ft.Column([
-            ft.Text("DATA BUFFER UTILITY", size=22, weight="bold", color="grey"),
+            ft.Text("Cyber Crypt", size=22, weight="bold", color="grey"),
             ft.Text("Ver: 1.0.4 - Local Stream Only", size=10, color="blue_grey"),
             ft.Divider(height=10, color="transparent"),
             v1,
             v2,
             ft.Row([
-                ft.ElevatedButton("PROCESS", on_click=_a, width=150),
-                ft.ElevatedButton("RESTORE", on_click=_b, width=150),
+                ft.ElevatedButton("Encrypt", on_click=_a, width=150),
+                ft.ElevatedButton("Decrypt", on_click=_b, width=150),
             ], alignment="center"),
             v3,
         ], horizontal_alignment="center", spacing=15)
