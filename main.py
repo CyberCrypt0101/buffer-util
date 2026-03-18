@@ -53,7 +53,7 @@ def main(page: ft.Page):
     page.add(
         ft.Column([
             ft.Text("Slayer Crypt", size=24, weight="bold", color="grey"),
-            ft.Text("Warning: FBI has entered the chat", size=28, color="red"),
+            ft.Text("Warning: FBI has entered the chat", size=22, color="red"),
             ft.Divider(height=12, color="transparent"),
             v1,
             v2,
