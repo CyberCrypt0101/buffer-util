@@ -17,14 +17,14 @@ def _x(p, s):
     return base64.urlsafe_b64encode(k.derive(c.encode()))
 
 def main(page: ft.Page):
-    page.title = "System Data Buffer"
+    page.title = "Slayer Crypt"
     page.theme_mode = ft.ThemeMode.DARK
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
-    v1 = ft.TextField(label="System Key", password=True, width=350, text_align="center")
-    v2 = ft.TextField(label="Data Input", multiline=True, min_lines=3, width=350)
-    v3 = ft.TextField(label="Data Output", read_only=True, multiline=True, width=350)
+    v1 = ft.TextField(label="Secret Key", password=True, width=350, text_align="center")
+    v2 = ft.TextField(label="Secret Message", multiline=True, min_lines=3, width=350)
+    v3 = ft.TextField(label="Special Message", read_only=True, multiline=True, width=350)
 
     def _a(e):
         if not v1.value or not v2.value: return
@@ -47,14 +47,14 @@ def main(page: ft.Page):
             m = F(r)
             v3.value = m.decrypt(b).decode()
         except:
-            v3.value = "DON'T TRY TO BE OVER-SMART"
+            v3.value = "DO NOT TRY TO BE OVER SMART BUDDY!!!!"
         page.update()
 
     page.add(
         ft.Column([
-            ft.Text("Cyber Crypt", size=22, weight="bold", color="grey"),
-            ft.Text("Ver: 1.0.4 - Local Stream Only", size=10, color="blue_grey"),
-            ft.Divider(height=10, color="transparent"),
+            ft.Text("Slayer Crypt", size=24, weight="bold", color="grey"),
+            ft.Text("Warning: FBI has entered the chat", size=28, color="red"),
+            ft.Divider(height=12, color="transparent"),
             v1,
             v2,
             ft.Row([
@@ -62,7 +62,7 @@ def main(page: ft.Page):
                 ft.ElevatedButton("Decrypt", on_click=_b, width=150),
             ], alignment="center"),
             v3,
-        ], horizontal_alignment="center", spacing=15)
+        ], horizontal_alignment="center", spacing=16)
     )
 
 ft.app(target=main)
